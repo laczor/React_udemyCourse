@@ -11,6 +11,12 @@
   <body>
     <div id="app"></div>
     <script type="text/babel">
+//******So actually we are defining a function in ES6, to create react components, takes stateless components and create react components
+//****** super helps us to modify the props, state object is created,
+//****** Function has been binded to the attached parameter component
+//****** function is defined in the basecount, and extended to the components
+
+
     let BaseCount = (BasicComponent) => class extends React.Component {
       constructor(props) {
         super(props);
@@ -25,6 +31,7 @@
           count: this.state.count + 1
         })
       }
+//**** will parse every state {...this.state}
       render() {
         return (
           <div className="container">
@@ -40,13 +47,14 @@
         <button className="btn blue-btn" onClick={props.increment}>Count: {props.count}</button>
       )
     }
-
+//So we are parsing the the basecomponent values to the component'S, properties, states, functions everything
     const Label = (props) => {
       return (
         <label onMouseMove={props.increment}>Count: {props.count} </label>
       )
     }
-
+//**** here we are creating custom components with our higher order function
+//**** we are wrapping it in a div, since 1 tag can be rendered in the react
     let ExtendedButton = BaseCount(Button);
     let ExtendedLabel = BaseCount(Label);
 

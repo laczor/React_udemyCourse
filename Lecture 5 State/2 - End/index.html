@@ -10,12 +10,16 @@
   <body>
     <div id="app"></div>
     <script type="text/babel">
+//*******States are the variables of a component, which can be changed, state values can be changed only with setState
     var NameStateComponent = React.createClass({
       resetName: function() {
         this.setState({
           name: ''
         })
       },
+//******* So an event is calling the namgeChanged function, which will be the keypress event,
+//*******  this event has a target which is the keyboard button, and it's value will be assigned to the name state which will update
+//*******  the <h1></h1> div element, since dynamic state value has been assigned to it.
       nameChanged: function(event) {
         this.setState({
           name: event.target.value

@@ -11,17 +11,23 @@
   <body>
     <div id="app"></div>
     <script type="text/babel">
+ //*******Get initial state, is  the constructor for the state variables
     var CounterChallenge = React.createClass({
       getInitialState: function() {
         return {
           count: 0
         }
       },
+ //*******customm function, with 1 parameter, which is changing the state of count with setState.
       incrementCount: function(value) {
         this.setState({
           count: this.state.count + value
         })
       },
+  //******* 3 buttons will be rendered in a container, which will be attached to the dom of "app".
+  //*******Assigning onclick event, with binding function
+  //******* Bind:-> for a function, we can assign a component/object, with values, so when we are referencing the this keyword in the 
+  //******* incrementCount function, the state of the clicked button, will be changed only.
       render: function() {
         return (
           <div className="container">

@@ -23,6 +23,7 @@ class App extends Component {
         return response.json();
       }).then(json => {
         console.log(json);
+//making pages, since there is a maximum number of states for a component
         let pages = Math.round(json.count / this.state.limit);
 
         this.setState({

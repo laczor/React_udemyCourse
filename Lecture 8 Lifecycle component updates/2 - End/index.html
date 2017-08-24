@@ -28,6 +28,7 @@
           popular: false
         })
       },
+ //componentWillReceiveProps: can control the state value based in the property
       componentWillReceiveProps: function(nextProps) {
         // console.log(nextProps);
         // console.log("Componentwillreceiveprops");
@@ -35,6 +36,7 @@
           popular: nextProps.likes >= 10
         })
       },
+ //shouldComponentUpdate: can control if the property is returned with value or not
       shouldComponentUpdate: function(nextProps, nextState) {
         // console.log("Should update?");
         // console.log("Should update nextProps: ", nextProps);
@@ -45,6 +47,8 @@
         console.log("Component Rendered");
         return (
           <div className="container">
+//******* Check if the state of popular is false or true
+
             <h1>{this.state.popular ? "I'm popular" : null}</h1>
             <button className="btn blue-btn" onClick={this.updateLikes}>Likes: {this.props.likes}</button>
           </div>

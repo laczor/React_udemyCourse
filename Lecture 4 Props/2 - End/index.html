@@ -10,17 +10,23 @@
   <body>
     <div id="app"></div>
     <script type="text/babel">
+    
+//*********propTypes, specific type criterias can be assigned, basically an ojbect, with associative arrayelements
+    
     var SecondComponent = React.createClass({
       propTypes: {
         name: React.PropTypes.string.isRequired,
         location: React.PropTypes.string.isRequired
       },
+//********* built in function, to assign default values, to the component html properties, can be overwritten by a given property
       getDefaultProps: function() {
         return {
           name: 'Peter',
           location: 'New York'
         }
       },
+//********* This means the component, this.props means all of the properties of the components.
+//********* let is a blockscope element, no a global variable, so the name/location wll be available only in the render function
       render: function() {
         let name = this.props.name;
         let location = this.props.location;
@@ -32,7 +38,7 @@
         )
       }
     });
-
+//********* possibility to declare the propTypes values outside of the component.
     // SecondComponent.propTypes = {
     //   name: React.PropTypes.number
     // }

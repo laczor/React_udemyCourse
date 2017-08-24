@@ -11,6 +11,10 @@
     <div id="app"></div>
     <script type="text/babel">
     class Counter extends React.Component {
+    
+//*******Constructor with props + super will enable us to use the properties of the component with this.
+//*******Functions has to be binded in the constructor, to appropriately reference the element, clicked with this.
+//*******with binding, we can pass the object and a value, in this case the value is passed as 10 in the console log
       constructor(props) {
         super(props);
         console.log(this.props);
@@ -28,6 +32,7 @@
         )
       }
     }
+//*******defaultProps / propTypes has to defined outside of the component.
 
     Counter.defaultProps = { text: "Hello" }
     Counter.propTypes = { text: React.PropTypes.string }

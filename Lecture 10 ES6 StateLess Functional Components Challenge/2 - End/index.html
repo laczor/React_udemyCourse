@@ -33,7 +33,8 @@
 
     Counter.defaultProps = { text: "Hello" }
     Counter.propTypes = { text: React.PropTypes.string }
-
+    
+//***Using a stateless constructor, to create BUtton components with parsed properties
     const Button = (props) => {
       return (
         <button className={props.className} onClick={props.clickHandler}>{props.text}</button>

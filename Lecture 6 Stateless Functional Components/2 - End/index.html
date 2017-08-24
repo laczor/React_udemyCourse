@@ -11,6 +11,8 @@
     <div id="app"></div>
     <script type="text/babel">
       var TaskList = React.createClass({
+//******Will return an array of objects as tasks, with title and id keys.
+
         getInitialState: function() {
           return {
             tasks: [
@@ -21,6 +23,8 @@
           }
 
         },
+//*****Looping through the array of objects with "map"
+//**Parsing the title as property, and id as key into the stateless Task function, which will return a button object.
         render: function() {
           return (
             <ul>
@@ -31,7 +35,7 @@
           )
         }
       });
-
+//***** Stateless function, which will return a task component, with the parsed properties
       var Task = function(props) {
         return (
           <li>Task: {props.title}</li>

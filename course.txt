@@ -1,0 +1,108 @@
+A list of the important learnings from the course lessons:
+
+
+Lecture 1:
+- Importing the react library,
+- Rendering a simple element to a div tag
+- Creating element with plain javasript
+
+Lecture 2:
+- React jsx rendering syntax
+
+Lecture 3:
+- Include Babel
+- Creating a component, with returning function, with jsx
+- Renderin the jsx syntax + attaching it to a DOM.
+- Important to wrap the jsx components into 1 single divison!
+
+Lecture 4:
+- Using this -> component
+- Usint this.props -> eah property of the component
+- propTypes: to specific criterias can be assigned to the properties
+(can be assigned outside of component as well)
+- getDefaultProps: works basically as a constructor
+
+Lecture 4.1
+- let keyword is a blockscope element instead of var which is global, variables defined with let will be available only in the function itself
+
+Lecture 5
+- (State-> variable of a component, which can be changed,) with setState method
+- function's called with onclick stb event, can call the event, it's target.value which has called the functions
+
+Lecture 5.1
+- GetInitialState: state constructor
+- this.setState: way to modify the state variables
+- assigning on click events, with the own function of a component
+- using Bind keyword to attach objects/components to the function with value
+
+Lecture 5.2
+- Assigning default arry of properties to the component
+- Using stateless functions to create Button components, it's properties are coming the main component, where the values are dymaically assigned, from it's states and properties
+- So actually we are parsing values to the Button function, to create Button components.
+- `${this.props.text} ${this.props.valueOne}`  = this.props.text + ' ' + this.props.valueOne
+
+Lecture 6.
+- Stateless component functions
+- GetInitalState with an array of object
+- for each loop with map
+ {this.state.tasks.map(function(task) {
+return <Task title={task.title} key={task.id} />
+              })}
+- Stateless function, which will return a task component, with the parsed properties
+
+Lecture 7
+getDefaultProps: 		// 1 called ONCE
+      // BEFORE COMPONENT IS RENDERED
+      // HAPPENS WHEN OUR CLASS IS CREATED!!!
+      
+getInitialState:		/ 2 called ONCE
+      // BEFORE COMPONENT IS RENDERED
+      // The return value will be used as the initial value of this.state.
+componentWillMount:		// 3 called ONCE
+      // BEFORE COMPONENT IS RENDERED
+render: 			// 4
+      // Happend whenever our component changes
+componentDidMount:		// 5 ONLY ONCE
+      // AFTER COMPONENT HAS RENDERED
+      // If you want to integrate with other JavaScript frameworks,
+      //  set timers using setTimeout or setInterval, or send AJAX requests,
+      // perform those operations in this method.
+componentWillUnmount:		// 6 ONLY ONCE
+      // AFTER COMPONENT HAS RENDERED
+      // Perform any necessary cleanup in this method,
+      //  such as invalidating timers or cleaning up any DOM
+      // elements that were created in componentDidMount.
+unmountComponentAtNode          how to unmount a component from a DOM element
+container component, and with button you can unmount, mount the div in it.
+
+Lecture 8
+componentWillReceiveProps: can control the state value based in the property
+shouldComponentUpdate: can control if the property is returned with value or not
+
+Lecture 9 ES6
+//*******Constructor with props + super will enable us to use the properties of the component with this.
+
+//*******Functions has to be binded in the constructor, to appropriately reference the element, clicked with this.
+
+//*******with binding, we can pass the object and a value, in this case the value is passed as 10 in the console log
+
+Lecture 10 ES6
+//***Using a stateless constructor, to create BUtton components with parsed properties
+
+Lecture 11 Higher order components
+//******So actually we are defining a function in ES6, to create react components, takes stateless components and create react components
+
+//****** super helps us to modify the props, state object is created,
+
+//****** Function has been binded to the attached parameter component
+
+//****** function is defined in the basecount, and extended to the components
+
+Lecture 13 JSX to be watched
+
+Lecture 14:
+(API Call/import 'whatwg-fetch';/ catch)
+src/index.js--->// we are parsing the url to the main app component
+using import 'whatwg-fetch'; to enable us for making API Calls.
+we are making a call, then when we get a response, we will console log the reponse.
+//making pages, since there is a maximum number of states for a component
